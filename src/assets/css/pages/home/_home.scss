@@ -1,0 +1,40 @@
+.home-unauth-section {
+  margin-inline: 2.5rem;
+  padding-block: 15rem;
+
+  .hero {
+    text-align: center;
+    justify-content: center;
+    
+    button{
+      margin-inline: auto;
+      width: 12rem;
+    }
+  }
+
+  .features {
+    padding-block: 6rem;
+
+    h1 {
+      text-align: center;
+    }
+  }
+
+  .features-list {
+    padding-block: 6rem;
+    grid-template-columns: repeat(2, 33%);
+    column-gap: 2rem;
+    justify-content: center;
+
+    .list-card {
+      padding: 2rem;
+      text-align: center;
+      border: solid 1px $color-1;
+      border-radius: 1rem;
+    }
+  }
+}
+
+.home-auth-section {
+  margin-inline: 0;
+}

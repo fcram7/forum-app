@@ -1,0 +1,47 @@
+.login-content, .register-content {
+  grid-template-columns: repeat(2, 50%);
+  padding: 8rem 3rem;
+  align-items: center;
+
+  .login-left, .register-left {
+    h1 {
+      font-size: 3rem;
+    }
+  }
+
+  .login-right, .register-right {
+    p{
+      margin-top: 1rem;
+      font-size: 1.125rem;
+    }
+
+    .login-form, .register-form {
+      label {
+        font-weight: $font-medium;
+        font-size: 1.5rem;
+      }
+  
+      input {
+        padding: 1rem;
+        background-color: transparent;
+        font-size: 1rem;
+        border: solid 1px $color-1;
+        border-radius: 1rem;
+      }
+  
+      button {
+        background-color: transparent;
+        font-size: 1.5rem;
+        border: solid 1px $color-1;
+        border-radius: 1rem;
+        transition: all 0.2s ease-in-out;
+  
+        &:hover {
+          background-color: $color-1;
+          color: $color-2;
+        }
+      }
+    }
+  }
+
+}

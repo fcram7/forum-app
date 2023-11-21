@@ -1,0 +1,35 @@
+.header-container {
+  background-color: $color-2;
+}
+
+.header {
+  justify-content: space-between;
+  margin-inline: 2.5rem;
+  height: 4rem;
+  align-items: center;
+
+  .header-title {
+    font-weight: $font-regular;
+  }
+}
+
+.nav-list-container {
+  gap: 2rem;
+  justify-content: space-between;
+
+  .nav-list {
+    font-size: 1rem;
+    color: $color-1;
+    transition: all 0.4s ease-in-out;
+
+    button {
+      padding: 0;
+      background-color: transparent;
+      border: none;
+    }
+
+    &:hover {
+      opacity: 0.5;
+    }
+  }
+}

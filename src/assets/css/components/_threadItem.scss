@@ -1,0 +1,54 @@
+.thread-item {
+  border: solid 1px $color-1;
+  border-radius: 1rem;
+  padding: 2rem 3rem;
+  row-gap: 0.75rem;
+  background-color: whitesmoke;
+
+  .thread-title, .thread-category {
+    width: fit-content;
+  }
+
+  .thread-title {
+    cursor: pointer;
+    transition: all 0.4s ease-in-out;
+
+    &:hover {
+      opacity: 0.5;
+    }
+  }
+
+  .thread-category {
+    border: solid 1px $color-1;
+    border-radius: 1rem;
+    padding: 0.25rem 0.75rem;
+    transition: all 0.4s ease-in-out;
+    font-weight: $font-bold;
+
+    &:hover {
+      color: $color-2;
+      background-color: $color-1;
+    }
+  }
+
+  .thread-info {
+    gap: 1rem;
+    align-items: center;
+
+    span {
+      font-size: 1.05rem;
+    }
+
+    &:nth-child(1), &:nth-child(2) {
+      font-size: 1.25rem;
+    }
+
+    &:nth-child(3) {
+      font-size: 1rem;
+    }
+
+    p span {
+      font-weight: $font-bold;
+    }
+  }
+}

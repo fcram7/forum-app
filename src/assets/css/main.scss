@@ -1,0 +1,15 @@
+//REUSABLES
+@import './reusables/variables';
+@import './reusables/base';
+@import './reusables/reusables';
+
+//COMPONENTS
+@import './components/header';
+@import './components/footer';
+@import './components/threadslist';
+@import './components/threadItem';
+
+//PAGES
+@import './pages/home/home';
+@import './pages/loginregister/loginregister';
+@import './pages/threadDetail/threaddetail';
