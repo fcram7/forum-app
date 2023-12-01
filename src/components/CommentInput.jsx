@@ -13,7 +13,7 @@ const CommentInput = ({ threadId }) => {
   return ( 
     <div className="comment-input">
       <form onSubmit={onAddComment}>
-        <textarea onChange={onSetComment} placeholder="Masukkan komentar anda" name="" id="" cols="30" rows="10"></textarea>
+        <textarea onChange={onSetComment} placeholder="Masukkan komentar anda" value={comment}></textarea>
         <button>Tambah komentar</button>
       </form>
     </div>

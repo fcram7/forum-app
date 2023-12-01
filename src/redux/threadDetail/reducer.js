@@ -1,53 +1,53 @@
 import { ActionType } from "./action";
 
-const threadDetailReducer = (threadDetail = null, action = {}) => {
+const detailThreadReducer = (detailThread = null, action = {}) => {
   switch (action.type) {
     case ActionType.RECEIVE_THREAD_DETAIL :
-      return action.payload.threadDetail
+      return action.payload.detailThread
     case ActionType.CLEAR_THREAD_DETAIL :
       return null
     case ActionType.ADD_COMMENT:
       return {
-        ...threadDetail,
+        ...detailThread,
         comments: [
           action.payload.comment,
-          ...threadDetail.comments
+          ...detailThread.comments
         ]
       }
     case ActionType.TOGGLE_UPVOTE_THREAD_DETAIL :
       return {
-        ...threadDetail,
-        upVotesBy: threadDetail.upVotesBy.includes(action.payload.userId)
-          ? threadDetail.upVotesBy.filter((id) => id !== action.payload.userId)
-          : threadDetail.upVotesBy.concat([action.payload.userId]),
-        downVotesBy: threadDetail.downVotesBy.includes(action.payload.userId)
-          ? threadDetail.downVotesBy.filter((id) => id !== action.payload.userId)
-          : threadDetail.downVotesBy
+        ...detailThread,
+        upVotesBy: detailThread.upVotesBy.includes(action.payload.userId)
+          ? detailThread.upVotesBy.filter((id) => id !== action.payload.userId)
+          : detailThread.upVotesBy.concat([action.payload.userId]),
+        downVotesBy: detailThread.downVotesBy.includes(action.payload.userId)
+          ? detailThread.downVotesBy.filter((id) => id !== action.payload.userId)
+          : detailThread.downVotesBy
       }
     case ActionType.TOGGLE_DOWNVOTE_THREAD_DETAIL :
       return {
-        ...threadDetail,
-        downVotesBy: threadDetail.downVotesBy.includes(action.payload.userId)
-          ? threadDetail.downVotesBy.filter((id) => id !== action.payload.userId)
-          : threadDetail.downVotesBy.concat([action.payload.userId]),
-        upVotesBy: threadDetail.upVotesBy.includes(action.payload.userId)
-          ? threadDetail.upVotesBy.filter((id) => id !== action.payload.userId)
-          : threadDetail.upVotesBy
+        ...detailThread,
+        downVotesBy: detailThread.downVotesBy.includes(action.payload.userId)
+          ? detailThread.downVotesBy.filter((id) => id !== action.payload.userId)
+          : detailThread.downVotesBy.concat([action.payload.userId]),
+        upVotesBy: detailThread.upVotesBy.includes(action.payload.userId)
+          ? detailThread.upVotesBy.filter((id) => id !== action.payload.userId)
+          : detailThread.upVotesBy
       }
     case ActionType.TOGGLE_NEUTRALVOTE_THREAD_DETAIL :
       return {
-        ...threadDetail,
-        upVotesBy: threadDetail.upVotesBy.includes(action.payload.userId)
-          ? threadDetail.upVotesBy.filter((id) => id !== action.payload.userId)
-          : threadDetail.upVotesBy,
-        downVotesBy: threadDetail.downVotesBy.includes(action.payload.userId)
-          ? threadDetail.downVotesBy.filter((id) => id !== action.payload.userId)
-          : threadDetail.downVotesBy,
+        ...detailThread,
+        upVotesBy: detailThread.upVotesBy.includes(action.payload.userId)
+          ? detailThread.upVotesBy.filter((id) => id !== action.payload.userId)
+          : detailThread.upVotesBy,
+        downVotesBy: detailThread.downVotesBy.includes(action.payload.userId)
+          ? detailThread.downVotesBy.filter((id) => id !== action.payload.userId)
+          : detailThread.downVotesBy,
       }
     case ActionType.TOGGLE_UPVOTE_COMMENT :
       return {
-        ...threadDetail,
-        comments: threadDetail.comments.map((comment) => {
+        ...detailThread,
+        comments: detailThread.comments.map((comment) => {
           if(comment.id === action.payload.commentId) {
             return {
               ...comment,
@@ -63,8 +63,8 @@ const threadDetailReducer = (threadDetail = null, action = {}) => {
       }
     case ActionType.TOGGLE_DOWNVOTE_COMMENT :
       return {
-        ...threadDetail,
-        comments: threadDetail.comments.map((comment) => {
+        ...detailThread,
+        comments: detailThread.comments.map((comment) => {
           return {
             ...comment,
             downVotesBy: comment.downVotesBy.includes(action.payload.userId)
@@ -78,8 +78,8 @@ const threadDetailReducer = (threadDetail = null, action = {}) => {
       }
     case ActionType.TOGGLE_NEUTRALVOTE_COMMENT :
       return {
-        ...threadDetail,
-        comments: threadDetail.comments.map((comment) => {
+        ...detailThread,
+        comments: detailThread.comments.map((comment) => {
           return {
             ...comment,
             downVotesBy: comment.downVotesBy.includes(action.payload.userId)
@@ -92,8 +92,8 @@ const threadDetailReducer = (threadDetail = null, action = {}) => {
         })
       }
     default :
-    return threadDetail
+    return detailThread
   }
 }
 
-export default threadDetailReducer;
+export default detailThreadReducer;

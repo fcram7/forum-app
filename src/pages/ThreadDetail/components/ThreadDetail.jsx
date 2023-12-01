@@ -13,13 +13,13 @@ const ThreadDetail = ({
   owner,
   upVotesBy,
   downVotesBy,
-  authUser,
   totalComments,
+  authUser
 }) => {
   const dispatch = useDispatch()
 
-  // const isThreadUpVoted = upVotesBy.includes(authUser);
-  // const isThreadDownVoted = downVotesBy.includes(authUser);
+  const isThreadUpVoted = upVotesBy.includes(authUser);
+  const isThreadDownVoted = downVotesBy.includes(authUser);
 
   const onUpVoteThread = () => {
     dispatch(asyncToggleUpVoteThreadDetail());
@@ -32,9 +32,11 @@ const ThreadDetail = ({
   return ( 
     <div className="thread-detail-content-container">
       <div className="thread-votes grid">
-        <div onClick={onUpVoteThread}>upvote</div>
+        <div onClick={onUpVoteThread}>
+          {isThreadUpVoted ? 'someone upvoted' : 'no upvote'}
+        </div>
         <h2>{upVotesBy.length + downVotesBy.length}</h2>
-        <div onClick={onDownVoteThread}>downvote</div>
+        <div onClick={onDownVoteThread}>{isThreadDownVoted ? 'someone downvoted' : 'no downvote'}</div>
       </div>
       <div className="thread-detail-content grid">
         <h2>{category}</h2>

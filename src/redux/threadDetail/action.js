@@ -12,10 +12,10 @@ const ActionType = {
   TOGGLE_NEUTRALVOTE_COMMENT: 'TOGGLE_NEUTRALVOTE_COMMENT'
 }
 
-const receiveThreadDetailActionCreator = (threadDetail) => ({
+const receiveThreadDetailActionCreator = (detailThread) => ({
   type: ActionType.RECEIVE_THREAD_DETAIL,
   payload: {
-    threadDetail
+    detailThread
   }
 })
 
@@ -78,8 +78,8 @@ const toggleNeutralVoteCommentActionCreator = ({ commentId, userId }) => ({
 const asyncReceiveThreadDetail = (threadId) => async (dispatch) => {
   dispatch(clearThreadDetailActionCreator())
   try {
-    const threadDetail = await api.getThreadDetail(threadId)
-    dispatch(receiveThreadDetailActionCreator(threadDetail))
+    const detailThread = await api.getThreadDetail(threadId)
+    dispatch(receiveThreadDetailActionCreator(detailThread.data))
   } catch (error) {
     alert(error.message)
   }

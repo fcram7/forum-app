@@ -66,7 +66,7 @@ const ThreadItem = ({
             <span>  {totalComments}</span>
           </div>
         </div>
-        <p>Dibuat oleh <span>{user.name}</span></p>
+        <h5>Dibuat oleh <span>{user.name}</span></h5>
       </div>
     </article>
    );
